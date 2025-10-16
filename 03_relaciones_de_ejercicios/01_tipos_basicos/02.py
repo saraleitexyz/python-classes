@@ -1,4 +1,4 @@
-# Pedir el radio de un círculo y calcular su área. A=PI*r²
+# 2. Pedir el radio de un círculo y calcular su área. A=PI*r²
 
 import math
 
