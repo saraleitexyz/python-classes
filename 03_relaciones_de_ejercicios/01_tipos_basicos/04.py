@@ -1,4 +1,4 @@
-  # 4. Pedir dos números y decir si son iguales o no.
+# 4. Pedir dos números y decir si son iguales o no.
 
 print("COMPROBADOR DE NÚMEROS IGUALES:")
 print("----------------------------------------------")
