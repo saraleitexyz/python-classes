@@ -8,6 +8,6 @@ word_dictionary = {}
 for word in words:
     first_letter = word[0]
     word_dictionary.setdefault(first_letter, word)
-    # Si hubiese mas de 1 palabra con la misma letra: []).append(word)
+    # Si hubiese mas de 1 palabra con la misma letra: []).append(word) como antes?
 
 print(word_dictionary)
