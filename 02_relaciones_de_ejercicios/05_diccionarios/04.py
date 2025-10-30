@@ -4,6 +4,7 @@
 
 unique_dict = {"color": "azul", "fruta": "arandanos", "zumo": "naranja"}
 
+# Es la clave nueva: valor nuevo
 reversed_dict = {v: k for k, v in unique_dict.items()}
 print(reversed_dict)
 
@@ -19,5 +20,5 @@ for k, v in repeated_unique_dict.items():
         inverted_dict[v] = [k]
     else:
         inverted_dict[v].append(k)
-
+# TODO: Los valores únicos se hacen lista tmb, quitar??
 print(inverted_dict)
