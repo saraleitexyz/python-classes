@@ -12,6 +12,7 @@ clean_text = text.lower().replace(",","").replace(".", "")
 
 word_frequency = {}
 for word in clean_text.split():
+    #Split devuelve en forma de lista
     if word in word_frequency:
         word_frequency[word] += 1
     else:
@@ -19,3 +20,20 @@ for word in clean_text.split():
 
 print(word_frequency)
 
+# Most popular solution:
+sorted_frequency = dict(sorted(word_frequency.items(), key=lambda x: x[1], reverse=True))
+
+# Teacher option:
+def frec_palabra(texto):
+    pares = list(word_frequency.items())
+    pares.sort()
+    print(pares)
+
+    pares_reves = [(v,k) for k,v in pares]
+    print(pares_reves)
+    pares_reves.sort(reverse=True)
+
+    print(pares_reves)
+
+print(frec_palabra(text))
+print(sorted_frequency)

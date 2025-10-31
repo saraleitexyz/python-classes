@@ -8,6 +8,12 @@ unique_dict = {"color": "azul", "fruta": "arandanos", "zumo": "naranja"}
 reversed_dict = {v: k for k, v in unique_dict.items()}
 print(reversed_dict)
 
+reversed_dict2 = {}
+for k, v in unique_dict.items():
+    reversed_dict2[k] = v
+
+print(reversed_dict2)
+
 repeated_unique_dict = {
     "color": "naranja",
     "fruta": "arandanos",
@@ -20,5 +26,7 @@ for k, v in repeated_unique_dict.items():
         inverted_dict[v] = [k]
     else:
         inverted_dict[v].append(k)
-# TODO: Los valores únicos se hacen lista tmb, quitar??
+
+# Comprobar si es un valor o una lista, si es una lista append.
+
 print(inverted_dict)

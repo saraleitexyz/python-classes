@@ -3,6 +3,7 @@
 # setdefault() a 0 antes de incrementar.
 
 def increase_value(dict, key):
+    # setdefault no hace nada con aquellas claves que ya existen
     dict.setdefault(key, 0)
     dict[key] = dict.get(key) + 1
     return dict
