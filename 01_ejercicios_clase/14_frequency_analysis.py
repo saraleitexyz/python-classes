@@ -37,6 +37,14 @@ for letter in clean_text:
         letter_frequency[letter] = letter_count
 
 for k,v in letter_frequency.items():
-    letter_frequency[k] = round((v/total_letters) * 100, 3)
+    letter_frequency[k] = round((v/total_letters) * 100, 2)
 
 print(letter_frequency)
+
+# Being extra
+
+import matplotlib.pyplot as plt
+plt.bar(sorted(letter_frequency.keys()), letter_frequency.values())
+plt.xlabel('Letters')
+plt.ylabel('Frequency (%)')
+plt.show()
