@@ -14,6 +14,15 @@ glossary = {
     'dictionary': 'A collection of key-value pairs.',
     'list': 'A collection of items in a particular order.',
     'comment': 'Useful text to write notes ignored by the Python interpreter.',
-    'looping': 'the most common way a computer automates repetitive tasks.',
-    'tuple': 'Like a list but the content can not be modified',
+    'looping': 'The most common way a computer automates repetitive tasks.',
+    'tuple': 'Like a list but the content can not be modified.',
 }
+
+# Now that you know how to loop through a dictionary, clean up the
+# code from Exercise 6-3 (page 99) by replacing your series of print() calls with a loop
+# that runs through the dictionary’s keys and values. When you’re sure that your loop
+# works, add five more Python terms to your glossary. When you run your program again,
+# these new words and meanings should automatically be included in the output.
+
+for k, v in glossary.items():
+    print(f'\n{k.title()}: \n {v}')
