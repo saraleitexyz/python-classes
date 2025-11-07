@@ -1,9 +1,3 @@
-# Coger un texto, pasar to do a minuscula y la funcion debe
-# a : 5`72 , b: 8'9
-# Quitar: ñ
-# Convertir tilde en la letra base.
-
-# Buscar como se suele poner el texto largo
 poetry = """Ya de mi amor la confesión sincera
 Oyeron tus calladas celosías,
 Y fue testigo de las ansias mías
@@ -19,21 +13,30 @@ Y acaso has de ignorarlo eternamente,
 Como las ondas de la mar veloces
 La ofrenda ignoran que les da la fuente.
 """
-print(poetry)
 
-eliminar=
+replace_dictionary = {'a': 'á', 'e': 'é', 'i': 'í', 'o': 'ó', 'u': 'ú','n':'ñ', '': ' '}
+#replace_dictionary = {'a': 'á', 'e': 'é', 'i': 'í', 'o': 'ó', 'u': 'ú','n':'ñ', '': (' ', '\n', ';', '.', ',')}
 
-#Optmizar con una diccionario a: á; e:é???
-clean_text = poetry.lower().replace('\n', ' ').replace(".", "").replace(",", "").replace(";","").replace("á","a").replace("é","e").replace("í", "i").replace("ó","o").replace("ú","u")
-print(clean_text)
+# TODO: Ver como poner lista dentro de replace_dictionary para cambiar varios símbolos value por la key ''
+clean_text = poetry.lower().replace('\n', '').replace(';', '').replace(',','').replace('.','')
 
-word_frequency = {}
-for word in clean_text.split():
-    if word in word_frequency:
-        word_frequency[word] += 1
-    else:
-        word_frequency[word] = 1
+#print(clean_text)
 
-for word, count in word_frequency.items():
+for k,v in replace_dictionary.items():
+    clean_text = clean_text.replace(v, k)
 
-print(word_frequency)
+# print(clean_text)
+
+letter_frequency = {}
+total_letters = len(clean_text)
+
+for letter in clean_text:
+    letter_count = clean_text.count(letter)
+    # Mas eficiente
+    if letter not in letter_frequency.keys():
+        letter_frequency[letter] = letter_count
+
+for k,v in letter_frequency.items():
+    letter_frequency[k] = round((v/total_letters) * 100, 3)
+
+print(letter_frequency)
